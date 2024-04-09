@@ -5,6 +5,7 @@ from rest_framework import generics, filters
 from .serializers import VideoSerializer
 from rest_framework.response import Response
 from rest_framework.pagination import LimitOffsetPagination
+from django.shortcuts import render
 
 
 
@@ -29,4 +30,13 @@ class VideoSearchAPIView(generics.ListAPIView):
     filter_backends = [filters.SearchFilter]
     search_fields = ['title', 'description']
 
+def video_dashboard(request):
+    videos = YT_Video.objects.all()
+    title_contains = request.GET.get('title_contains')
+    if title_contains:
+        videos = videos.filter(title__icontains=title_contains)
 
+    sort_by = request.GET.get('sort_by', '-published_at')
+    videos = videos.order_by(sort_by)
+
+    return render(request, 'scraper/dashboard.html', {'videos': videos})

@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from scraper.views import video_dashboard
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    path('dashboard/', video_dashboard, name='video_dashboard'),
     path('api/', include('scraper.urls')),
 ]
