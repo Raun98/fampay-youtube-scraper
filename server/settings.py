@@ -125,7 +125,7 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Youtube Credentials
-YOUTUBE_API_KEY = 'AIzaSyBfwzGwhPaCH6q14y3_morZOPmWFPYAj3E'
+YOUTUBE_API_KEY = ['AIzaSyBIzspEhPZqOT0eDLawz12TUMp3dLWRUi0','AIzaSyBtTp94HRRZPuTOLEB1SBo8AKtZacGGpeQ','AIzaSyBfwzGwhPaCH6q14y3_morZOPmWFPYAj3E']
 
 # celery congif
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

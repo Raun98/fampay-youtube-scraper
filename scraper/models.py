@@ -11,8 +11,11 @@ class YT_Video(models.Model):
     def __str__(self):
         return self.title
 
-def store_latest_videos(api_key, search_query):
-    videos = fetch_latest_videos(api_key, search_query)
+def store_latest_videos(api_keys, search_query):
+    lastVideoTime = YT_Video.objects.order_by('-published_at').first().published_at
+    print(lastVideoTime)
+    formatted_time= lastVideoTime.strftime('%Y-%m-%dT%H:%M:%SZ')
+    videos = fetch_latest_videos(api_keys, search_query, last_video_time=formatted_time)
     for video in videos:
         YT_Video.objects.create(
             title=video['snippet']['title'],
