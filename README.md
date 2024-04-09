@@ -18,6 +18,10 @@ To make an API to fetch latest videos sorted in reverse chronological order of t
 - Once done building, run `docker-compose up -d`
 - And to check logs you can run `docker-compose logs -f`
 
-Django returns a URL to your local host, follow that to find the dashboard.
+# Links: 
+Follow [http://127.0.0.1:8000/dashboard/] to find the dashboard.
+
+To access the list of most recently pulled videos - [http://127.0.0.1:8000/api/videos/]. Here a publishedAt filter can show videos in ascending or descending order.
+To access the search API - [http://127.0.0.1:8000/api/videos/search/]. Here the search bar allows you to search for videos based on a videos title or description.
 
 Thank you for reading!
