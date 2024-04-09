@@ -129,8 +129,8 @@ YOUTUBE_API_KEY = ['AIzaSyBIzspEhPZqOT0eDLawz12TUMp3dLWRUi0','AIzaSyBtTp94HRRZPu
 
 # celery congif
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CELERY_BROKER_URL = 'redis://localhost:6379/0'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/0'
 CELERY_BEAT_SCHEDULE = {
     'fetch-videos-every-10-seconds': {
         'task': 'scraper.tasks.fetch_and_store_celery',
